@@ -1,0 +1,26 @@
+{
+    "name": "markcial/mocktrine",
+    "description": "Mock persistence server",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Marc Garcia Sastre a.k.a. Markcial",
+            "email": "markcial@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "dev-master",
+        "doctrine/dbal": "dev-master",
+        "mockery/mockery": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*",
+        "symfony/class-loader": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mocktrine\\": "src/Mocktrine"
+        }
+    }
+}
