@@ -2,6 +2,7 @@
 
 namespace Mocktrine;
 
+use Mocktrine\Storage\ApcStorage;
 use Mocktrine\Storage\IStorage;
 use Mocktrine\Storage\SHMStorage;
 
@@ -15,7 +16,7 @@ class Pool
     {
         // apc by default
         if (is_null($storage)) {
-            $storage = new SHMStorage();
+            $storage = new ApcStorage();
         }
         $this->storage = $storage;
     }

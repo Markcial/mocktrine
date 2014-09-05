@@ -2,6 +2,7 @@
 
 namespace Mocktrine\Storage;
 
+use Mocktrine\Exception;
 use Mocktrine\Storage\SHM\MemoryResource;
 
 /**
@@ -46,8 +47,13 @@ class SHMStorage implements IStorage
     // private shortcuts
     public function has($key)
     {
-        $index = $this->map[$key];
-        return shm_has_var($this->resource, $index);
+        if (array_key_exists($key, $this->map)) {
+            $index = $this->map[$key];
+
+            return shm_has_var($this->resource, $index);
+        }
+
+        return false;
     }
 
     public function get($key)
@@ -62,7 +68,7 @@ class SHMStorage implements IStorage
 
     private function setup()
     {
-        $this->counter = 2;
+        $this->counter = 3;
         $this->map = array();
 
         $this->refresh();

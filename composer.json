@@ -11,12 +11,13 @@
     ],
     "require": {
         "doctrine/orm": "dev-master",
-        "doctrine/dbal": "dev-master",
-        "mockery/mockery": "dev-master"
+        "doctrine/dbal": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "4.0.*",
-        "symfony/class-loader": "dev-master"
+        "symfony/class-loader": "dev-master",
+        "mockery/mockery": "dev-master",
+	"d11wtq/boris": "dev-master"
     },
     "autoload": {
         "psr-4": {
